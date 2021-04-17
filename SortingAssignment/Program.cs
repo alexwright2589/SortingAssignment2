@@ -36,7 +36,6 @@ namespace SortingAssignment
                 if ((i == 0) || (i % 9 == 0))
                 {
                     Console.WriteLine(data[i]);
-                    Console.WriteLine("wag")
                 }
             }
         }
