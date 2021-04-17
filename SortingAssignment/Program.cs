@@ -37,6 +37,16 @@ namespace SortingAssignment
                 {
                     Console.WriteLine(data[i]);
                     Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+                    Console.WriteLine("reallyyyy");
+
                 }
             }
         }
