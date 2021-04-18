@@ -14,7 +14,7 @@ namespace SortingAssignment
             {
                 for (int j = 0; j < n - 1 - i; j++)
                 {
-                    if (a[j + 1] < a[j])
+                    if (a[j + 1] > a[j])
                     {
                         int temp = a[j];
                         a[j] = a[j + 1];

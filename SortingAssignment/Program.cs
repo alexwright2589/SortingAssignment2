@@ -6,12 +6,11 @@ namespace SortingAssignment
     {
         static void Main(string[] args)
         {
-
+            int[] Road1 = new int[] { };
+            int[] Road2 = new int[] { };
+            int[] Road3 = new int[] { };
             while (true)
             {
-                int[] Road1 = new int[] { };
-                int[] Road2 = new int[] { };
-                int[] Road3 = new int[] { };
 
                 Console.WriteLine("Would you like to sort and search the small road data or the large \n enter 1 for small 2 for large");
                 string ANSWER = Console.ReadLine();
@@ -27,6 +26,7 @@ namespace SortingAssignment
                     Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_2048.txt"), int.Parse);
                     Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_2048.txt"), int.Parse);
                     Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_2048.txt"), int.Parse);
+                    break;
                 }
                 else
                 {

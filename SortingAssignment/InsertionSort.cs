@@ -16,7 +16,7 @@ namespace SortingAssignment
                 int temp = data[numSorted];
                 for (index = numSorted; index > 0; index--)
                 {
-                    if (temp < data[index - 1])
+                    if (temp > data[index - 1])
                     {
                         data[index] = data[index - 1];
                     }
