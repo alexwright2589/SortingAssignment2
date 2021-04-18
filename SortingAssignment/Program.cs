@@ -7,9 +7,33 @@ namespace SortingAssignment
         static void Main(string[] args)
         {
 
-            int[] Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
-            int[] Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_256.txt"), int.Parse);
-            int[] Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_256.txt"), int.Parse);
+            while (true)
+            {
+                int[] Road1 = new int[] { };
+                int[] Road2 = new int[] { };
+                int[] Road3 = new int[] { };
+
+                Console.WriteLine("Would you like to sort and search the small road data or the large \n enter 1 for small 2 for large");
+                string ANSWER = Console.ReadLine();
+                if (ANSWER == "1")
+                {
+                    Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
+                    Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_256.txt"), int.Parse);
+                    Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_256.txt"), int.Parse);
+                    break;
+                }
+                if (ANSWER == "2")
+                {
+                    Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_2048.txt"), int.Parse);
+                    Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_2048.txt"), int.Parse);
+                    Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_2048.txt"), int.Parse);
+                }
+                else
+                {
+                    Console.WriteLine("This is not a valid input");
+                    continue;
+                }
+            }
 
             int[] Sorted1 = new int[] { };
             int[] Sorted2 = new int[] { };
