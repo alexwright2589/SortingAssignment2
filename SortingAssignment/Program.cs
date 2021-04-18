@@ -71,6 +71,31 @@ namespace SortingAssignment
             int NumberSearch3 = binarySearch.BinarySearch_R(Number, Sorted3, 0, Sorted3.Length - 1);
 
 
+
+            while (true)
+            {
+                Console.WriteLine("Would you like to check if there are multiple of these values in the lists? \n type 1 for yes 2 for no");
+                string Answer = Console.ReadLine();
+                if (Answer == "1")
+                {
+                    LinearSearch linearSearch = new LinearSearch();
+                    int numbersearch1 = linearSearch.Linearsearch(Sorted1, Number);
+                    int numbersearch2 = linearSearch.Linearsearch(Sorted2, Number);
+                    int numbersearch3 = linearSearch.Linearsearch(Sorted3, Number);
+                    break;
+                }
+                if (Answer == "2")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("This is not a valid input");
+                    continue;
+                }
+            }
+
+
         }
         private static void GetEveryNthValue(int[] data)
         {
