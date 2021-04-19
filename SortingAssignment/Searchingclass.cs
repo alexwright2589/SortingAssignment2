@@ -64,6 +64,7 @@ namespace SortingAssignment
                     }
                 }
             }
+            return array1;
         }
     }
 }

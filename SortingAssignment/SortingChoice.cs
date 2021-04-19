@@ -8,6 +8,7 @@ namespace SortingAssignment
             int[] Sorted1 = new int[] { };
             int[] Sorted2 = new int[] { };
             int[] Sorted3 = new int[] { };
+            int[] Sorted4 = new int[] { };
             int[] nthvalue1 = new int[] { };
             int[] nthvalue2 = new int[] { };
             int[] nthvalue3 = new int[] { };
@@ -55,14 +56,12 @@ namespace SortingAssignment
                     {
                         continue;
                     }
-                    GetEveryNthvalue getEveryNthvalue = new GetEveryNthvalue();
-                    nthvalue1 = getEveryNthvalue.GetEveryNthValue(array1, ANSWER);
-                    nthvalue2 = getEveryNthvalue.GetEveryNthValue(array2, ANSWER);
-                    nthvalue3 = getEveryNthvalue.GetEveryNthValue(array3, ANSWER);
+                    GetEveryNthValue(Sorted1, ANSWER);
+                    GetEveryNthValue(Sorted2, ANSWER);
+                    GetEveryNthValue(Sorted3, ANSWER);
 
                     Searchingclass searchingclass = new Searchingclass();
                     Search1 = searchingclass.SearchingClass(array1, array2, array3, ans);
-
                     break;
                 }
                 else
@@ -70,35 +69,55 @@ namespace SortingAssignment
                     if (ans == "1")
                     {
                         Quicksort quickSort = new Quicksort();
-                        Sorted1 = quickSort.QuickSort(array1);
+                        Sorted4 = quickSort.QuickSort(array1);
                     }
                     if (ans == "2")
                     {
                         Heapsort heapSort = new Heapsort();
-                        Sorted1 = heapSort.HeapSort(array1);
+                        Sorted4 = heapSort.HeapSort(array1);
                     }
                     if (ans == "3")
                     {
                         Insertionsort insertionSort = new Insertionsort();
-                        Sorted1 = insertionSort.InsertionSort(array1);
+                        Sorted4 = insertionSort.InsertionSort(array1);
                     }
                     if (ans == "4")
                     {
                         Bubblesort bubbleSort = new Bubblesort();
-                        Sorted1 = bubbleSort.BubbleSort(array1, array1.Length - 1);
+                        Sorted4 = bubbleSort.BubbleSort(array1, array1.Length - 1);
                     }
                     else
                     {
                         continue;
                     }
-                    GetEveryNthvalue getEveryNthvalue = new GetEveryNthvalue();
-                    nthvalue1 = getEveryNthvalue.GetEveryNthValue(array1, answer);
+                    GetEveryNthValue(Sorted1, answer);
                     Searchingclass searchingclass = new Searchingclass();
-                    Search1 = searchingclass.SearchingClass(array1, array2, array3, ans);
+                    Search1 = searchingclass.SearchingClass(Sorted1, Sorted2, Sorted3, ans);
                     break;
                 }
             }
             return array1;
+        }
+
+        private static void GetEveryNthValue(int[] data, string ANSWER)
+        {
+            if (ANSWER == "1")
+            {
+                for (int i = 0; i < data.Length; i++)
+                    if ((i == 0) || (i % 9 == 0))
+                    {
+                        Console.WriteLine(data[i]);
+                    }
+            }
+            else
+            {
+                for (int i = 0; i < data.Length; i++)
+                    if ((i == 0) || (i % 49 == 0))
+                    {
+                        Console.WriteLine(data[i]);
+                    }
+
+            }
         }
     }
 }

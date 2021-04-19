@@ -3,9 +3,7 @@ namespace SortingAssignment
 {
     public class GetEveryNthvalue
     {
-        public GetEveryNthvalue()
-        {
-            static void GetEveryNthValue(int[] data, string ANSWER)
+            private static void GetEveryNthValue(int[] data, string ANSWER)
             {
                 if (ANSWER == "1")
                 {
@@ -24,8 +22,6 @@ namespace SortingAssignment
                         }
 
                 }
-
             }
-        }
     }
 }
