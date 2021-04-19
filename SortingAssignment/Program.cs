@@ -10,8 +10,13 @@ namespace SortingAssignment
             int[] Road2 = new int[] { };
             int[] Road3 = new int[] { };
             string ANSWER;
+            string ans;
             while (true)
             {
+                int[] Choice1 = new int[] { };
+                int[] Choice2 = new int[] { };
+                int[] Choice3 = new int[] { };
+                int[] Choice4 = new int[] { };
                 Console.WriteLine("Would you like to sort and search the small road data or the large \n enter 1 for small 2 for large");
                 ANSWER = Console.ReadLine();
                 if (ANSWER == "1")
@@ -19,123 +24,44 @@ namespace SortingAssignment
                     Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
                     Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_256.txt"), int.Parse);
                     Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_256.txt"), int.Parse);
-                    break;
+                    Console.WriteLine("Would you like to sort these three files normally or would you like to merge road 1 and 3 together and sorte them? \n Enter 1 for normally 2 for merge");
+                    ans = Console.ReadLine();
+                    if (ans == "1")
+                    {
+                        SortingChoice sortingChoice = new SortingChoice();
+                        Choice1 = sortingChoice.Sortingchoice(Road1, Road2, Road3, ANSWER);
+                    }
+                    if (ans == "2")
+                    {
+                        Mergefiles mergeFiles = new Mergefiles();
+                        Choice2 = mergeFiles.MergeFiles(Road1, Road3);
+                    }
                 }
                 if (ANSWER == "2")
                 {
                     Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_2048.txt"), int.Parse);
                     Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_2048.txt"), int.Parse);
                     Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_2048.txt"), int.Parse);
-                    break;
+                    Console.WriteLine("Would you like to sort these three files normally or would you like to merge road 1 and 3 together and sorte them? \n Enter 1 for normally 2 for merge");
+                    ans = Console.ReadLine();
+                    if (ans == "1")
+                    {
+                        SortingChoice sortingChoice = new SortingChoice();
+                        Choice3 = sortingChoice.Sortingchoice(Road1, Road2, Road3);
+                    }
+                    if (ans == "2")
+                    {
+                        Mergefiles mergeFiles = new Mergefiles();
+                        Choice4 = mergeFiles.MergeFiles(Road1, Road3);
+                    }
                 }
                 else
                 {
                     Console.WriteLine("This is not a valid input");
                     continue;
-                }
-            }
-
-            int[] Sorted1 = new int[] { };
-            int[] Sorted2 = new int[] { };
-            int[] Sorted3 = new int[] { };
-
-            while (true)
-            {
-                Console.WriteLine("Which algorithm would you like to sort the data with? \n Enter 1 for QuickSort \n Enter 2 for HeapSort \n Enter 3 for InsertionSort \n Enter 4 for BubbleSort");
-                string answer = Console.ReadLine();
-
-                if (answer == "1")
-                {
-                    Quicksort quickSort = new Quicksort();
-                    Sorted1 = quickSort.QuickSort(Road1);
-                    Sorted2 = quickSort.QuickSort(Road2);
-                    Sorted3 = quickSort.QuickSort(Road3);
-                    break;
-                }
-                if (answer == "2")
-                {
-                    Heapsort heapSort = new Heapsort();
-                    Sorted1 = heapSort.HeapSort(Road1);
-                    Sorted2 = heapSort.HeapSort(Road2);
-                    Sorted3 = heapSort.HeapSort(Road3);
-                    break;
-                }
-                if (answer == "3")
-                {
-                    Insertionsort insertionSort = new Insertionsort();
-                    Sorted1 = insertionSort.InsertionSort(Road1);
-                    Sorted2 = insertionSort.InsertionSort(Road2);
-                    Sorted3 = insertionSort.InsertionSort(Road3);
-                    break;
-                }
-                if (answer == "4")
-                {
-                    Bubblesort bubbleSort = new Bubblesort();
-                    Sorted1 = bubbleSort.BubbleSort(Road1, Road1.Length - 1);
-                    Sorted2 = bubbleSort.BubbleSort(Road2, Road2.Length - 1);
-                    Sorted3 = bubbleSort.BubbleSort(Road3, Road3.Length - 1);
-                    break;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-            GetEveryNthValue(Sorted1, ANSWER);
-            GetEveryNthValue(Sorted2, ANSWER);
-            GetEveryNthValue(Sorted3, ANSWER);
-
-            Console.WriteLine("What number would you like to search for?");
-            int Number = Convert.ToInt32(Console.ReadLine());
-
-            BinarySearch binarySearch = new BinarySearch();
-            int NumberSearch1 = binarySearch.Binary_Search(Number, Sorted1);
-            int NumberSearch2 = binarySearch.Binary_Search(Number, Sorted2);
-            int NumberSearch3 = binarySearch.Binary_Search(Number, Sorted3);
-
-            while (true)
-            {
-                Console.WriteLine("Would you like to check if there are multiple of these values in the lists? \n type 1 for yes 2 for no");
-                string Answer = Console.ReadLine();
-                if (Answer == "1")
-                {
-                    Linearsearch linearSearch = new Linearsearch();
-                    int numbersearch1 = linearSearch.LinearSearch(Sorted1, Number);
-                    int numbersearch2 = linearSearch.LinearSearch(Sorted2, Number);
-                    int numbersearch3 = linearSearch.LinearSearch(Sorted3, Number);
-                    break;
-                }
-                if (Answer == "2")
-                {
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("This is not a valid input");
-                    continue;
-                }
-            }
-        }
-        private static void GetEveryNthValue(int[] data, string ANSWER)
-        {
-            if (ANSWER == "1")
-                for (int i = 0; i < data.Length; i++)
-                {
-                    if ((i == 0) || (i % 9 == 0))
-                    {
-                        Console.WriteLine(data[i]);
-                    }
-                }
-            else
-            {
-                for (int i = 0; i < data.Length; i++)
-                {
-                    if ((i == 0) || (i % 49 == 0))
-                    {
-                        Console.WriteLine(data[i]);
-                    }
                 }
             }
         }
     }
 }
+            
