@@ -29,12 +29,12 @@ namespace SortingAssignment
                     if (ans == "1")
                     {
                         SortingChoice sortingChoice = new SortingChoice();
-                        Choice1 = sortingChoice.Sortingchoice(Road1, Road2, Road3, ANSWER);
+                        Choice1 = sortingChoice.Sortingchoice(Road1, Road2, Road3, ANSWER, ans);
                     }
                     if (ans == "2")
                     {
                         Mergefiles mergeFiles = new Mergefiles();
-                        Choice2 = mergeFiles.MergeFiles(Road1, Road3);
+                        Choice2 = mergeFiles.MergeFiles(Road1, Road2, Road3, ANSWER, ans);
                     }
                 }
                 if (ANSWER == "2")
