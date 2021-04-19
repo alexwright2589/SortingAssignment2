@@ -6,18 +6,33 @@ using System.Threading.Tasks;
 
 namespace SortingAssignment
 {
-    public class LinearSearch
+    public class Linearsearch
     {
-        int j = 0;
-        public int Linearsearch(int[] data, int item)
+        int ArrayNumber = 0;
+        public int LinearSearch(int[] data, int key)
         {
-            j++;
-            int N = data.Length;
-            for (int i = 0; i < N; i++)
-                if (data[i] == item)
-                    Console.WriteLine("The item you are looking for is at position " + i + " in array " + j);
-            return -1;
+            int Count = 0;
+            int stepstaken = 0;
+            ArrayNumber++;
+            Console.Write("\nThe value you are looking for in array " + ArrayNumber + " at positions: ");
+            for (int i = 0; i < data.Length; i++)
+            {
+                stepstaken++;
+                if (data[i] == key)
+                {
+                    Count++;
+                    Console.Write($"{i + 1}, ");
+                }
+            }
+            if (Count == 0)
+            {
+                Console.WriteLine("\nYour value doesn't exist in array " + ArrayNumber);
+            }
+            else
+            {
+                Console.WriteLine("\nNum of Steps is : " + stepstaken);
+            }
+            return stepstaken;
         }
-
     }
 }

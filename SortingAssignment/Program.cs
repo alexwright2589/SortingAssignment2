@@ -9,11 +9,11 @@ namespace SortingAssignment
             int[] Road1 = new int[] { };
             int[] Road2 = new int[] { };
             int[] Road3 = new int[] { };
+            string ANSWER;
             while (true)
             {
-
                 Console.WriteLine("Would you like to sort and search the small road data or the large \n enter 1 for small 2 for large");
-                string ANSWER = Console.ReadLine();
+                ANSWER = Console.ReadLine();
                 if (ANSWER == "1")
                 {
                     Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
@@ -81,20 +81,17 @@ namespace SortingAssignment
                     continue;
                 }
             }
-
-            GetEveryNthValue(Sorted1);
-            GetEveryNthValue(Sorted2);
-            GetEveryNthValue(Sorted3);
+            GetEveryNthValue(Sorted1, ANSWER);
+            GetEveryNthValue(Sorted2, ANSWER);
+            GetEveryNthValue(Sorted3, ANSWER);
 
             Console.WriteLine("What number would you like to search for?");
             int Number = Convert.ToInt32(Console.ReadLine());
 
             BinarySearch binarySearch = new BinarySearch();
-            int NumberSearch1 = binarySearch.BinarySearch_R(Number, Sorted1, 0, Sorted1.Length - 1);
-            int NumberSearch2 = binarySearch.BinarySearch_R(Number, Sorted2, 0, Sorted2.Length - 1);
-            int NumberSearch3 = binarySearch.BinarySearch_R(Number, Sorted3, 0, Sorted3.Length - 1);
-
-
+            int NumberSearch1 = binarySearch.Binary_Search(Number, Sorted1);
+            int NumberSearch2 = binarySearch.Binary_Search(Number, Sorted2);
+            int NumberSearch3 = binarySearch.Binary_Search(Number, Sorted3);
 
             while (true)
             {
@@ -102,10 +99,10 @@ namespace SortingAssignment
                 string Answer = Console.ReadLine();
                 if (Answer == "1")
                 {
-                    LinearSearch linearSearch = new LinearSearch();
-                    int numbersearch1 = linearSearch.Linearsearch(Sorted1, Number);
-                    int numbersearch2 = linearSearch.Linearsearch(Sorted2, Number);
-                    int numbersearch3 = linearSearch.Linearsearch(Sorted3, Number);
+                    Linearsearch linearSearch = new Linearsearch();
+                    int numbersearch1 = linearSearch.LinearSearch(Sorted1, Number);
+                    int numbersearch2 = linearSearch.LinearSearch(Sorted2, Number);
+                    int numbersearch3 = linearSearch.LinearSearch(Sorted3, Number);
                     break;
                 }
                 if (Answer == "2")
@@ -118,19 +115,27 @@ namespace SortingAssignment
                     continue;
                 }
             }
-
-
         }
-        private static void GetEveryNthValue(int[] data)
+        private static void GetEveryNthValue(int[] data, string ANSWER)
         {
-            for (int i = 0; i < data.Length; i++)
-            {
-                if ((i == 0) || (i % 9 == 0))
+            if (ANSWER == "1")
+                for (int i = 0; i < data.Length; i++)
                 {
-                    Console.WriteLine(data[i]);
+                    if ((i == 0) || (i % 9 == 0))
+                    {
+                        Console.WriteLine(data[i]);
+                    }
+                }
+            else
+            {
+                for (int i = 0; i < data.Length; i++)
+                {
+                    if ((i == 0) || (i % 49 == 0))
+                    {
+                        Console.WriteLine(data[i]);
+                    }
                 }
             }
         }
-
     }
 }

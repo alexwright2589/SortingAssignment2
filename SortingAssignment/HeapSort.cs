@@ -8,11 +8,15 @@ namespace SortingAssignment
 {
     public class Heapsort
     {
+        int ArrayNumber = 0;
         public int[] HeapSort(int[] Heap)
         {
+            int stepstaken = 0;
+            ArrayNumber++;
             int HeapSize = Heap.Length; int i;
             for (i = (HeapSize - 1) / 2; i >= 0; i--)
             {
+                stepstaken++;
                 Max_Heapify(Heap, HeapSize, i);
             }
             for (i = Heap.Length - 1; i > 0; i--)
@@ -21,6 +25,7 @@ namespace SortingAssignment
                 HeapSize--;
                 Max_Heapify(Heap, HeapSize, 0);
             }
+            Console.WriteLine("\nNum of Steps is : " + stepstaken + " in array " + ArrayNumber);
             return Heap;
         }
         private static void Max_Heapify(int[] Heap, int HeapSize, int Index)

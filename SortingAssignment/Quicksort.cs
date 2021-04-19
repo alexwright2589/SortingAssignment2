@@ -8,14 +8,19 @@ namespace SortingAssignment
 {
     public class Quicksort
     {
-
+        int ArrayNumber = 0;
+        public int stepstaken { get; set; }
         public int[] QuickSort(int[] data)
         {
+            stepstaken = 0;
+            ArrayNumber++;
             Quick_Sort(data, 0, data.Length - 1);
+            Console.WriteLine("\nNum of Steps is : " + stepstaken + " in array " + ArrayNumber);
             return data;
         }
         public void Quick_Sort(int[] data, int left, int right)
         {
+            stepstaken++;
             int i, j;
             int pivot, temp;
 
@@ -41,7 +46,5 @@ namespace SortingAssignment
             if (left < j) Quick_Sort(data, left, j);
             if (i < right) Quick_Sort(data, i, right);
         }
-
     }
-    
 }
