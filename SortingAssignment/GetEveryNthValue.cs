@@ -5,23 +5,24 @@ namespace SortingAssignment
     {
         public GetEveryNthvalue()
         {
-            static void GetEveryNthValue(int[] data, string answer)
+            static void GetEveryNthValue(int[] data, string ANSWER)
             {
-                if (answer == "1")
+                if (ANSWER == "1")
                 {
                     for (int i = 0; i < data.Length; i++)
                         if ((i == 0) || (i % 9 == 0))
                         {
                             Console.WriteLine(data[i]);
                         }
-                        else
+                }
+                else
+                {
+                    for (int i = 0; i < data.Length; i++)
+                        if ((i == 0) || (i % 49 == 0))
                         {
-                            for (int i = 0; i < data.Length; i++)
-                                if ((i == 0) || (i % 49 == 0))
-                                {
-                                    Console.WriteLine(data[i]);
-                                }
+                            Console.WriteLine(data[i]);
                         }
+
                 }
 
             }

@@ -47,12 +47,12 @@ namespace SortingAssignment
                     if (ans == "1")
                     {
                         SortingChoice sortingChoice = new SortingChoice();
-                        Choice3 = sortingChoice.Sortingchoice(Road1, Road2, Road3);
+                        Choice3 = sortingChoice.Sortingchoice(Road1, Road2, Road3, ANSWER, ans);
                     }
                     if (ans == "2")
                     {
                         Mergefiles mergeFiles = new Mergefiles();
-                        Choice4 = mergeFiles.MergeFiles(Road1, Road3);
+                        Choice4 = mergeFiles.MergeFiles(Road1, Road2, Road3, ANSWER, ans);
                     }
                 }
                 else
