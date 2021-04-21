@@ -10,7 +10,7 @@ namespace SortingAssignment
     {
         // sets arraynumber
         int ArrayNumber = 0;
-        public int[] HeapSort(int[] Heap)
+        public int[] HeapSortascending(int[] Heap)
         {
             //sets steps taken and increases arraynumber
             int stepstaken = 0;
@@ -56,6 +56,53 @@ namespace SortingAssignment
                 Heap[Index] = Heap[largest];
                 Heap[largest] = temp;
                 Max_Heapify(Heap, HeapSize, largest);
+            }
+        }
+        public int[] HeapSortDescending(int[] Heap)
+        {
+            //sets descending steps taken and increases arraynumber
+            int stepstaken = 0;
+            // sets the heapsize so it knows the size of the data
+            int HeapSize = Heap.Length; int i;
+            for (i = (HeapSize - 1) / 2; i >= 0; i--)
+            {
+                // increases descending steps taken everytime the method is called
+                stepstaken++;
+                Max_Heapifydescending(Heap, HeapSize, i);
+            }
+            for (i = Heap.Length - 1; i > 0; i--)
+            {
+                // increases steps taken everytime the method is called
+                stepstaken++;
+                int temp = Heap[i]; Heap[i] = Heap[0]; Heap[0] = temp;
+                HeapSize--;
+                Max_Heapifydescending(Heap, HeapSize, 0);
+            }
+            Console.WriteLine("\nNum of Steps is : " + stepstaken + " in array " + ArrayNumber);
+            return Heap;
+        }
+        // carries out the heapsort algorithm but does it in decending order
+        private static void Max_Heapifydescending(int[] Heap, int HeapSize, int Index)
+        {
+            int Left = (Index + 1) * 2 - 1; int Right = (Index + 1) * 2; int largest = 0;
+            if (Left < HeapSize && Heap[Left] < Heap[Index])
+            {
+                largest = Left;
+            }
+            else
+            {
+                largest = Index;
+            }
+            if (Right < HeapSize && Heap[Right] < Heap[largest])
+            {
+                largest = Right;
+            }
+            if (largest != Index)
+            {
+                int temp = Heap[Index];
+                Heap[Index] = Heap[largest];
+                Heap[largest] = temp;
+                Max_Heapifydescending(Heap, HeapSize, largest);
             }
         }
     }

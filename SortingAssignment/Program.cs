@@ -9,9 +9,15 @@ namespace SortingAssignment
             int[] Road1 = new int[] { };
             int[] Road2 = new int[] { };
             int[] Road3 = new int[] { };
+            int[] Road4 = new int[] { };
+            int[] Road5 = new int[] { };
+            int[] Road6 = new int[] { };
             int[] Sorted1 = new int[] { };
             int[] Sorted2 = new int[] { };
             int[] Sorted3 = new int[] { };
+            int[] Sorted4 = new int[] { };
+            int[] Sorted5 = new int[] { };
+            int[] Sorted6 = new int[] { };
             int count;
             string ANSWER;
             // simple while loops to ensure the user is entering the right input
@@ -25,6 +31,9 @@ namespace SortingAssignment
                     Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
                     Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_256.txt"), int.Parse);
                     Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_256.txt"), int.Parse);
+                    Road4 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
+                    Road5 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_256.txt"), int.Parse);
+                    Road6 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_256.txt"), int.Parse);
                     break;
                 }
                 if (ANSWER == "2")
@@ -32,6 +41,9 @@ namespace SortingAssignment
                     Road1 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_2048.txt"), int.Parse);
                     Road2 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_2048.txt"), int.Parse);
                     Road3 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_2048.txt"), int.Parse);
+                    Road4 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_1_256.txt"), int.Parse);
+                    Road5 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_2_256.txt"), int.Parse);
+                    Road6 = Array.ConvertAll(System.IO.File.ReadAllLines("Road_3_256.txt"), int.Parse);
                     break;
                 }
                 else
@@ -49,33 +61,45 @@ namespace SortingAssignment
                 if (answer == "1")
                 {
                     Quicksort quickSort = new Quicksort();
-                    Sorted1 = quickSort.QuickSort(Road1);
-                    Sorted2 = quickSort.QuickSort(Road2);
-                    Sorted3 = quickSort.QuickSort(Road3);
+                    Sorted1 = quickSort.QuickSortascending(Road1);
+                    Sorted4 = quickSort.QuickSortdescending(Road4);
+                    Sorted2 = quickSort.QuickSortascending(Road2);
+                    Sorted5 = quickSort.QuickSortdescending(Road5);
+                    Sorted3 = quickSort.QuickSortascending(Road3);
+                    Sorted6 = quickSort.QuickSortdescending(Road6);
                     break;
                 }
                 if (answer == "2")
                 {
                     Heapsort heapSort = new Heapsort();
-                    Sorted1 = heapSort.HeapSort(Road1);
-                    Sorted2 = heapSort.HeapSort(Road2);
-                    Sorted3 = heapSort.HeapSort(Road3);
+                    Sorted1 = heapSort.HeapSortascending(Road1);
+                    Sorted4 = heapSort.HeapSortDescending(Road4);
+                    Sorted2 = heapSort.HeapSortascending(Road2);
+                    Sorted5 = heapSort.HeapSortDescending(Road5);
+                    Sorted3 = heapSort.HeapSortascending(Road3);
+                    Sorted6 = heapSort.HeapSortDescending(Road6);
                     break;
                 }
                 if (answer == "3")
                 {
                     Insertionsort insertionSort = new Insertionsort();
-                    Sorted1 = insertionSort.InsertionSort(Road1);
-                    Sorted2 = insertionSort.InsertionSort(Road2);
-                    Sorted3 = insertionSort.InsertionSort(Road3);
+                    Sorted1 = insertionSort.InsertionSortascending(Road1);
+                    Sorted4 = insertionSort.InsertionSortdescending(Road4);
+                    Sorted2 = insertionSort.InsertionSortascending(Road2);
+                    Sorted5 = insertionSort.InsertionSortdescending(Road5);
+                    Sorted3 = insertionSort.InsertionSortascending(Road3);
+                    Sorted6 = insertionSort.InsertionSortdescending(Road6);
                     break;
                 }
                 if (answer == "4")
                 {
-                    Bubblesort bubbleSort = new Bubblesort();
-                    Sorted1 = bubbleSort.BubbleSort(Road1, Road1.Length - 1);
-                    Sorted2 = bubbleSort.BubbleSort(Road2, Road2.Length - 1);
-                    Sorted3 = bubbleSort.BubbleSort(Road3, Road3.Length - 1);
+                    Bubblesortascending bubbleSort = new Bubblesortascending();
+                    Sorted1 = bubbleSort.BubbleSortascending(Road1, Road1.Length - 1);
+                    Sorted4 = bubbleSort.BubbleSortascending(Road4, Road4.Length - 1);
+                    Sorted2 = bubbleSort.BubbleSortascending(Road2, Road2.Length - 1);
+                    Sorted5 = bubbleSort.BubbleSortascending(Road5, Road5.Length - 1);
+                    Sorted3 = bubbleSort.BubbleSortascending(Road3, Road3.Length - 1);
+                    Sorted6 = bubbleSort.BubbleSortascending(Road6, Road6.Length - 1);
                     break;
                 }
                 else
@@ -91,6 +115,13 @@ namespace SortingAssignment
             GetEveryNthValue(Sorted2, ANSWER, count);
             count++;
             GetEveryNthValue(Sorted3, ANSWER, count);
+            count--;
+            count--;
+            GetEveryNthValue(Sorted4, ANSWER, count);
+            count++;
+            GetEveryNthValue(Sorted5, ANSWER, count);
+            count++;
+            GetEveryNthValue(Sorted6, ANSWER, count);
 
             // Gets the user to enter a number they would like to search for
             Console.WriteLine("What number would you like to search for?");
@@ -130,7 +161,7 @@ namespace SortingAssignment
             Console.WriteLine("Array " + count + ": ");
             if (ANSWER == "1")
             {
-                for (int i = 0; i < data.Length; i++)
+                for (int i = 0; i < data.Length + 1; i++)
                 {
                     if ((i == 0) || (i % 10 == 0))
                     {
@@ -140,7 +171,7 @@ namespace SortingAssignment
             }
             else
             {
-                for (int i = 0; i < data.Length; i++)
+                for (int i = 0; i < data.Length + 1; i++)
                 {
                     if ((i == 0) || (i % 50 == 0))
                     {

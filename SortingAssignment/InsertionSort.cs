@@ -10,7 +10,7 @@ namespace SortingAssignment
     {
         // sets arraynumber
         int ArrayNumber = 0;
-        public int[] InsertionSort(int[] data)
+        public int[] InsertionSortascending(int[] data)
         {
             //sets steps taken, numSorted and index and increases arraynumber by one
             int stepstaken = 0;
@@ -40,7 +40,39 @@ namespace SortingAssignment
                 numSorted++;
             }
             // outputs the number of steps taken one it breaks out of the while loop
-            Console.WriteLine("\nNum of Steps is : " + stepstaken + " in array " + ArrayNumber);
+            Console.WriteLine("\nNum of Steps taked ascending is : " + stepstaken + " in array " + ArrayNumber);
+            return data;
+        }
+        public int[] InsertionSortdescending(int[] data)
+        {
+            //sets descending steps taken, numSorted and index
+            int stepstakendecending = 0;
+            int numSorted = 1;
+            int index;
+            // while loop so it carries on until the last number in the array
+            while (numSorted < data.Length)
+            {
+                // increases descending steps taken everytime the while loop moves up a value
+                stepstakendecending++;
+                int temp = data[numSorted];
+                //for loops to carry out the necessary steps for the inserion sort algorithm
+                for (index = numSorted; index > 0; index--)
+                {
+                    stepstakendecending++;
+                    if (temp > data[index - 1])
+                    {
+                        data[index] = data[index - 1];
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                data[index] = temp;
+                numSorted++;
+            }
+            // outputs the number of steps taken one it breaks out of the while loop
+            Console.WriteLine("\nNum of Steps taken descending is : " + stepstakendecending + " in array " + ArrayNumber);
             return data;
         }
     }
