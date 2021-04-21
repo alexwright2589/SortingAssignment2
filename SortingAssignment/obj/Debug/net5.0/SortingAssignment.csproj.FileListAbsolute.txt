@@ -1,0 +1,16 @@
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\SortingAssignment.exe
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\SortingAssignment.deps.json
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\SortingAssignment.runtimeconfig.json
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\SortingAssignment.runtimeconfig.dev.json
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\SortingAssignment.dll
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\ref\SortingAssignment.dll
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\bin\Debug\net5.0\SortingAssignment.pdb
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.csprojAssemblyReference.cache
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.AssemblyInfoInputs.cache
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.AssemblyInfo.cs
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.csproj.CoreCompileInputs.cache
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.dll
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\ref\SortingAssignment.dll
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.pdb
+C:\Users\Golde\Source\Repos\Sorting\SortingAssignment\obj\Debug\net5.0\SortingAssignment.genruntimeconfig.cache
