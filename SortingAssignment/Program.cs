@@ -93,13 +93,13 @@ namespace SortingAssignment
                 }
                 if (answer == "4")
                 {
-                    Bubblesortascending bubbleSort = new Bubblesortascending();
+                    Bubblesort bubbleSort = new Bubblesort();
                     Sorted1 = bubbleSort.BubbleSortascending(Road1, Road1.Length - 1);
-                    Sorted4 = bubbleSort.BubbleSortascending(Road4, Road4.Length - 1);
+                    Sorted4 = bubbleSort.BubbleSortdescending(Road4, Road4.Length - 1);
                     Sorted2 = bubbleSort.BubbleSortascending(Road2, Road2.Length - 1);
-                    Sorted5 = bubbleSort.BubbleSortascending(Road5, Road5.Length - 1);
+                    Sorted5 = bubbleSort.BubbleSortdescending(Road5, Road5.Length - 1);
                     Sorted3 = bubbleSort.BubbleSortascending(Road3, Road3.Length - 1);
-                    Sorted6 = bubbleSort.BubbleSortascending(Road6, Road6.Length - 1);
+                    Sorted6 = bubbleSort.BubbleSortdescending(Road6, Road6.Length - 1);
                     break;
                 }
                 else

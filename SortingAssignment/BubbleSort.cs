@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SortingAssignment
 {
-    public class Bubblesortascending
+    public class Bubblesort
     {
         // sets arraynumber
         int ArrayNumber = 0;
@@ -23,7 +23,7 @@ namespace SortingAssignment
                 for (int j = 0; j < n - 1 - i; j++)
                 {
                     stepstaken++;
-                    if (a[j + 1] > a[j])
+                    if (a[j + 1] < a[j])
                     {
                         int temp = a[j];
                         a[j] = a[j + 1];
@@ -35,7 +35,7 @@ namespace SortingAssignment
             Console.WriteLine("\nNum of Steps is : " + stepstaken + " in array " + ArrayNumber);
             return a;
         }
-        public int[] BubbleSortdecending(int[] a, int n)
+        public int[] BubbleSortdescending(int[] a, int n)
         {
             //sets descending steps taken
             int stepstakendecending = 0;
@@ -44,7 +44,7 @@ namespace SortingAssignment
             {
                 // increases steps taken and for loop so it moves the first number to the correct spot in the array
                 stepstakendecending++;
-                for (int j = 0; j > n - 1 - i; j++)
+                for (int j = 0; j < n - 1 - i; j++)
                 {
                     stepstakendecending++;
                     if (a[j + 1] > a[j])
